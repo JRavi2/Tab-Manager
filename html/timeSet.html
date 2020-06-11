@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="link-container">
+        <a href="search.html" id="btn-search">Search</a>
+      </div>
+      <div class="link-container">
+        <a href="timeSet.html" id="btn-time">Set Time</a>
+      </div>
+    </nav>
+    <form id="time-form">
+      <input
+        type="number"
+        name="threshold-time"
+        placeholder="Time"
+        id="threshold-time"
+        min="1"
+      />
+      <select name="format" id="format">
+        <!-- Dev Options -->
+        <option value="Seconds">Seconds</option>
+        <option value="Minutes">Minutes</option>
+        <!-- Production Options -->
+        <option value="Hours">Hour(s)</option>
+        <option value="Days">Day(s)</option>
+        <option value="Weeks">Week(s)</option>
+        <!-- <option value="Months">Months</option> Don't know waht to do with this -->
+      </select>
+      <br />
+      <button type="submit" id="time-button">Set</button>
+    </form>
+    <script src="../scripts/timeSetter.js"></script>
+  </body>
+</html>

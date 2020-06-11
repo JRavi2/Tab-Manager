@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+body {
+  width: 200px;
+  outline: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-container {
+  width: 50%;
+  text-align: center;
+  padding: 9px;
+  background-color: #4271d6;
+  font-size: 14px;
+}
+
+.link-container:nth-child(1) {
+  border-right: 1px solid #eeeeee;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#tab-search {
+  text-align: center;
+}
+
+#searchbar {
+  margin: 10px 0;
+  padding: 5px 2px;
+}
+
+#search-list {
+  height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-weight: 300;
+  /* text-align: left; */
+}
+
+.list-item {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+#time-form {
+  margin: 7.5px;
+  text-align: center;
+}
+
+#threshold-time {
+  width: 45px;
+  padding: 3px;
+}
+
+#format {
+  padding: 3px;
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+
+#time-button {
+  margin-top: 5px;
+  padding: 6px 12.5px;
+  border-radius: 2px;
+  border: 0;
+  background-color: #4a78db;
+  color: #ffffff;
+}
