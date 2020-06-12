@@ -25,6 +25,7 @@ timeSetButton.onclick = function (element) {
   }
 
   chrome.storage.sync.set({ thresholdTime: timeToSet });
+  window.location.href = "../html/search.html";
 };
 
 timeForm.addEventListener("submit", (e) => e.preventDefault());
