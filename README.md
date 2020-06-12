@@ -12,3 +12,5 @@ Also, currently the icon for the extension is set to the default icons from the 
 ## How to Use
 
 Clone the repository and then in Google Chome, goto `chrome://extensions`. Enable Developer Mode in the right top corner. Click on 'Load Upacked', navigate to the cloned repository and select any file from that folder.
+
+To use any newly released updates, run `git pull` in the terminal when in the extension directory and then goto `chrome://extensions` and reload the extension.
