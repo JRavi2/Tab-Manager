@@ -6,6 +6,8 @@ const timeForm = document.getElementById("time-form");
 timeSetButton.onclick = function (element) {
   var timeToSet;
 
+  if (timeInputBox.value === "") timeInputBox.value = 1;
+
   // Convert from given time format to seconds
   switch (timeFormat.value) {
     case "Hours":
