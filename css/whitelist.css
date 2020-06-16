@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 2px;
+  box-sizing: border-box;
+  font-family: Roboto, serif;
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+body {
+  width: 250px;
+
+  outline: none;
+}
+
+img {
+  filter: invert(25%) sepia(32%) saturate(3923%) hue-rotate(208deg)
+    brightness(87%) contrast(87%);
+}
