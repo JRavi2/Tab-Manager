@@ -48,7 +48,7 @@ const appendToList = (host) => {
   };
 };
 
-const addToList = (e) => {
+const validateAndAdd = (e) => {
   e.preventDefault(); // Don't refresh the page
 
   // Validate the Entered URL
@@ -70,4 +70,4 @@ const addToList = (e) => {
   inputBox.value = "";
 };
 
-form.addEventListener("submit", addToList);
+form.addEventListener("submit", validateAndAdd);
