@@ -11,11 +11,28 @@
 
 body {
   width: 250px;
-
   outline: none;
 }
 
 img {
   filter: invert(25%) sepia(32%) saturate(3923%) hue-rotate(208deg)
     brightness(87%) contrast(87%);
+}
+
+#whitelist-container {
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-item {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 4px 10px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
 }
