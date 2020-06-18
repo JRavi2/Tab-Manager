@@ -4,9 +4,12 @@
     <link rel="stylesheet" href="../css/whitelist.css" />
   </head>
   <body>
-    <a href="search.html"
-      ><img src="../images/back-arrow.png" alt="goBack" width="25px"
-    /></a>
+    <header>
+      <a href="search.html"
+        ><img src="../images/back-arrow.png" alt="goBack" width="25px"
+      /></a>
+      <h1 id="title">WHITELIST</h1>
+    </header>
     <form id="whitelist-form">
       <input
         type="text"
@@ -15,7 +18,7 @@
         id="whitelist-box"
         min="1"
       />
-      <button>Add</button>
+      <button id="add-button">Add</button>
     </form>
     <div id="whitelist-container">
       <!-- To be filled dynamically -->
