@@ -9,14 +9,11 @@ var tabList = [];
 // Add the tabLIst when a new tab is created
 chrome.tabs.onCreated.addListener(function (tab) {
   tabList.push({ id: tab.id, time: 0 });
-  console.log(tabList);
 });
 
 // Remove the tab from the tabList when the tab is closed
 chrome.tabs.onRemoved.addListener(function (tab_id) {
-  console.log(tab_id);
   tabList = tabList.filter((tab) => tab.id !== tab_id);
-  console.log(tabList);
 });
 
 // When the tab becomes active, reset the timer for that tab
@@ -25,6 +22,18 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
   tabList.forEach((tab) => {
     if (tab.id === id) tab.time = 0;
   });
+});
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+  if (changeInfo.status === 'complete' && tab.status === 'complete' && tab.url != undefined) {
+    var url = new URL(tab.url);
+    chrome.storage.sync.get("whitelist", data => {
+      if(data.whitelist && data.whitelist.includes(url.host))
+        tabList.forEach(tab => {
+          if (tab.id === tabId) tab.time = -1;
+        });
+    });
+  }
 });
 
 async function timeIncrementer() {
@@ -37,8 +46,8 @@ async function timeIncrementer() {
         if (curr_tab_id === tab.id)
           // Don't increase time for the current tab i.e. the active tab
           return;
-
-        tab.time += 1;
+        if (tab.time != -1)
+          tab.time += 1;
         if (tab.time >= thresholdTime) {
           // Close the Tab and remove from tabList
           chrome.tabs.remove(tab.id);
