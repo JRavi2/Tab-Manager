@@ -23,7 +23,7 @@ a {
 #tab-search {
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 20%;
+  grid-template-columns: 1fr 15%;
 }
 
 #searchbar {
