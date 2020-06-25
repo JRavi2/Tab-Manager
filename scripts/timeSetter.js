@@ -19,11 +19,9 @@ timeSetButton.onclick = function (element) {
     case "Weeks":
       timeToSet = timeInputBox.value * 7 * 24 * 60 * 60;
       break;
-    case "Minutes":
-      timeToSet = timeInputBox.value * 60;
-      break;
+    // Default to Hours
     default:
-      timeToSet = timeInputBox.value;
+      timeToSet = timeInputBox.value * 60 * 60;
   }
 
   chrome.storage.sync.set({ thresholdTime: timeToSet });
