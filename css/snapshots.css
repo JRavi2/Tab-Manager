@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, serif;
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+body {
+  width: 250px;
+  outline: none;
+}
+
+header {
+  background-color: #4a78db;
+  padding: 4px;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+header a {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+header img {
+  filter: invert(25%) sepia(32%) saturate(3923%) hue-rotate(208deg)
+    brightness(87%) contrast(87%);
+}
+
+#title {
+  color: #ffffff;
+  font-size: 17.5px;
+  margin: 2px 0;
+}
+
+#snapshot-name-input {
+  margin-left: 9px;
+  padding: 3px;
+}
+
+#add-button {
+  padding: 6px 12.5px;
+  border-radius: 2px;
+  border: 0;
+  background-color: #4a78db;
+  color: #ffffff;
+}
+
+#snapshots-container {
+  margin: 10px 0;
+  max-height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-item {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 4px 10px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+}
