@@ -20,4 +20,4 @@ To use any newly released updates, run `git pull` in the terminal when in the ex
 
 ## Credits
 
-Huge thanks to (@farzher)[https://github.com/farzher] for the (fuzzysort)[https://github.com/farzher/fuzzysort] script, which helped me in adding the search feature.
+Huge thanks to [@farzher](https://github.com/farzher) for the [fuzzysort](https://github.com/farzher/fuzzysort) script, which helped me in adding the search feature.
