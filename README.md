@@ -14,7 +14,7 @@ To use any newly released updates, run `git pull` in the terminal when in the ex
 
 ## Improvements/Features to Add
 
-- Add the ability to view the list of tabs saved in a snapshot
+- Add the ability to view and edit the list of tabs saved in a snapshot
 - Add an icon for the extension
 - Improve UI Design
 
