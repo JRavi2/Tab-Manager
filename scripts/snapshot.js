@@ -2,8 +2,6 @@ const inputBox = document.getElementById("snapshot-name-input");
 const form = document.getElementById("snapshot-form");
 const snapshotsContainer = document.getElementById("snapshots-container");
 
-let snapshots = [];
-
 /* Prototype for the snapshot data being stored:
     snapshots: [
         {
@@ -23,7 +21,7 @@ let snapshots = [];
 
 // Get the snapshot data
 chrome.storage.sync.get("snapshots", data => {
-	snapshots = data.snapshots ? data.snapshots : [];
+	let snapshots = data.snapshots ? data.snapshots : [];
 	snapshots.forEach(snapshot => {
 		appendToList(snapshot.name);
 	});
@@ -64,11 +62,13 @@ const appendToList = snapshotName => {
 // Take and save the Snapshot
 const takeSnapshot = async e => {
 	e.preventDefault(); // Don't refresh the page
+
 	let snapshotName = inputBox.value;
 	var tabList;
 
 	// Get the list of currently open Tabs i.e. take the snapshot
 	await chrome.tabs.query({ windowType: "normal" }, tabs => {
+		// We only need the title, url, and index (use of index to be implemented) so extract just those values
 		tabList = tabs.map(tab => ({
 			title: tab.title,
 			url: tab.url,
@@ -83,9 +83,11 @@ const takeSnapshot = async e => {
 				tabs: tabList
 			});
 			chrome.storage.sync.set({ snapshots: newList });
+			console.log("Yayyayya!");
 		});
 	});
 
+	// While the snapshot is being added to the storage, display it to the screen
 	appendToList(snapshotName);
 	inputBox.value = "";
 };
@@ -97,6 +99,8 @@ const revertToSnapshot = e => {
 		let targetUrls = data.snapshots
 			.find(snapshot => snapshot.name === snapshotName)
 			.tabs.map(tab => tab.url);
+
+		// Open the snapshot in a new window
 		chrome.windows.create({
 			url: targetUrls
 		});
