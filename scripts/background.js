@@ -63,6 +63,8 @@ async function timeIncrementer() {
 		thresholdTime = data.thresholdTime;
 		tabList.forEach(tab => {
 			chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+				if (tabs.length === 0)
+					return;
 				var curr_tab_id = tabs[0].id;
 				if (curr_tab_id === tab.id)
 					// Don't increase time for the current tab i.e. the active tab
