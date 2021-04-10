@@ -67,7 +67,7 @@ const takeSnapshot = async e => {
 	var tabList;
 
 	// Get the list of currently open Tabs i.e. take the snapshot
-	await chrome.tabs.query({ windowType: "normal" }, tabs => {
+	chrome.tabs.query({ windowType: "normal" }, tabs => {
 		// We only need the title, url, and index (use of index to be implemented) so extract just those values
 		tabList = tabs.map(tab => ({
 			title: tab.title,
@@ -82,8 +82,12 @@ const takeSnapshot = async e => {
 				name: snapshotName,
 				tabs: tabList
 			});
-			chrome.storage.sync.set({ snapshots: newList });
-			console.log("Yayyayya!");
+			chrome.storage.sync.set({ snapshots: newList }, () => {
+				var error = chrome.runtime.lastError;
+				if (error) {
+					alert(error.message);
+				}
+			});
 		});
 	});
 
