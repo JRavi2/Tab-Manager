@@ -2,7 +2,7 @@
   "name": "Tab Manager",
   "version": "1.0",
   "description": "A simple Extention to help you manage your tabs.",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "downloads"],
   "background": {
     "scripts": ["scripts/background.js"],
     "persistent": true
